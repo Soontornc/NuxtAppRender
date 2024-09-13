@@ -111,21 +111,21 @@ const exportPDF = (products: any[]) => {
 
   // ตั้งค่าตาราง
   doc.autoTable({
-    head: headers,
-    body: data,
-    startY: 60,
-    theme: "grid",
-    margin: { top: 60, right: 40, bottom: 20, left: 40 },
-    styles: { fontSize: 10, cellPadding: 5 }, // ขนาดฟอนต์และ padding ของเซลล์
-    columnStyles: {
-      0: { cellWidth: 30 },
-      1: { cellWidth: "auto" },
-      2: { cellWidth: 100 },
-      3: { cellWidth: 80 },
-      4: { cellWidth: 40 },
-      5: { cellWidth: 80 },
-    },
-  });
+      head: headers,
+      body: data,
+      startY: 60,
+      theme: "grid",
+      margin: { top: 60, right: 40, bottom: 20, left: 40 },
+      styles: { font: "Kanit-Regular", fontSize: 10, cellPadding: 5 }, // Increased font size and padding for better readability
+      columnStyles: {
+        0: { cellWidth: 30 },
+        1: { cellWidth: "auto" },
+        2: { cellWidth: 100 },
+        3: { cellWidth: 80 },
+        4: { cellWidth: 40 },
+        5: { cellWidth: 80 },
+      },
+    });
 
   // ตั้งค่าชื่อเอกสาร
   doc.text(title, marginLeft, 40);
