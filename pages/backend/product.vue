@@ -400,10 +400,10 @@
         // Close Dialog
        close()
 
+       fetchProducts()
         // Refresh Product List with current page
         const { data: newProducts } = await useSpringApi().getAllProducts(page.value, rowsPerPage.value)
         products.value = newProducts.value?.products
-        fetchProducts()
     }
 
     // เรียกทำงานครั้งแรกเมื่อ Component ถูก Load
