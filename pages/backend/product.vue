@@ -639,9 +639,9 @@
                         :length="Math.ceil(totalItems / rowsPerPage)"
                         next-icon="mdi-chevron-right"
                         prev-icon="mdi-chevron-left"
+                        @update:modelValue="fetchProducts"
                         @next="fetchProducts"
                         @prev="fetchProducts"
-                        @update:modelValue="fetchProducts"
                     ></v-pagination>
                     
                     <v-table class="mt-5">
@@ -676,7 +676,7 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td>{{ product.unitPrice }}</td>
+                                <td>{{ numberWithCommas(product.unitPrice) }}</td>
                                 <td>{{ product.unitInStock }}</td>
                                 <td>{{ product.categoryName }}</td>
                                 <td>{{ product.createdDate }}</td>
