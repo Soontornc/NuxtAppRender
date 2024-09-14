@@ -170,10 +170,6 @@
         totalItems.value = data.value?.total
         filteredProducts.value = products.value
         console.log(data.value)
-        
-         // Refresh Product List with current page
-         const { data: newProducts } = await useSpringApi().getAllProducts(page.value, rowsPerPage.value)
-        products.value = newProducts.value?.products
     }
 
     // ฟังก์ชันสำหรับการ Fetch Categories ทั้งหมด
@@ -407,6 +403,7 @@
         // Refresh Product List with current page
         const { data: newProducts } = await useSpringApi().getAllProducts(page.value, rowsPerPage.value)
         products.value = newProducts.value?.products
+        fetchProducts()
     }
 
     // เรียกทำงานครั้งแรกเมื่อ Component ถูก Load
