@@ -311,7 +311,7 @@
                // Refresh Product List with current page
                const { data: newProducts } = await useSpringApi().getAllProducts(page.value, rowsPerPage.value)
                products.value = newProducts.value?.products
-
+               fetchProducts()
 
             } catch (error) {
                 console.error('Error creating product:', error)
@@ -383,7 +383,7 @@
                 // Refresh Product List with current page
                 const { data: newProducts } = await useSpringApi().getAllProducts(page.value, rowsPerPage.value)
                 products.value = newProducts.value?.products
-
+                fetchProducts()
             } catch (error) {
                 console.error('Error updating product:', error)
             }
