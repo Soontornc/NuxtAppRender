@@ -400,10 +400,9 @@
         // Close Dialog
        close()
 
-       fetchProducts()
         // Refresh Product List with current page
-        // const { data: newProducts } = await useSpringApi().getAllProducts(page.value, rowsPerPage.value)
-        // products.value = newProducts.value?.products
+        const { data: newProducts } = await useSpringApi().getAllProducts(page.value, rowsPerPage.value)
+        products.value = newProducts.value?.products
     }
 
     // เรียกทำงานครั้งแรกเมื่อ Component ถูก Load
@@ -639,9 +638,9 @@
                         :length="Math.ceil(totalItems / rowsPerPage)"
                         next-icon="mdi-chevron-right"
                         prev-icon="mdi-chevron-left"
-                        @update:modelValue="fetchProducts"
                         @next="fetchProducts"
                         @prev="fetchProducts"
+                         @update:modelValue="fetchProducts"
                     ></v-pagination>
                     
                     <v-table class="mt-5">
