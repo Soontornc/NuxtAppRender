@@ -562,7 +562,7 @@
             variant="text"
             @click="deletedialog=false"
             >
-            Cancle
+            Cancel
             </v-btn>
         </v-card-actions>
         </v-card>
