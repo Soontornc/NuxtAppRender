@@ -402,8 +402,8 @@
 
        fetchProducts()
         // Refresh Product List with current page
-        const { data: newProducts } = await useSpringApi().getAllProducts(page.value, rowsPerPage.value)
-        products.value = newProducts.value?.products
+        // const { data: newProducts } = await useSpringApi().getAllProducts(page.value, rowsPerPage.value)
+        // products.value = newProducts.value?.products
     }
 
     // เรียกทำงานครั้งแรกเมื่อ Component ถูก Load
